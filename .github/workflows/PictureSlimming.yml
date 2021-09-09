@@ -19,6 +19,8 @@ jobs:
 
       - name: imgcmp
         uses: 9sako6/imgcmp@1.0.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GHTOKEN }}
         
       - name: telegramPush
         run: |
