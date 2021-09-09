@@ -18,6 +18,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: imgcmp
-        uses: 9sako6/imgcmp@1.0.0
+        uses: 9sako6/imgcmp@master
         env:
           GITHUB_TOKEN: ${{ secrets.IMGTOKEN }}
+          IGNORED_FILES: "public/*:posts/*.svg"
