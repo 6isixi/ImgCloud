@@ -1,0 +1,25 @@
+name: Picture Slimming
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+  watch:
+    types: [started]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: imgcmp
+        uses: 9sako6/imgcmp@1.0.0
+        
+      - name: telegramPush
+        run: |
+          curl https://tgmsgpush.vercel.app/api/notify?u=973896977&m=fuckPictureSizeSuccess -X POST
