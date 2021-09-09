@@ -21,7 +21,3 @@ jobs:
         uses: 9sako6/imgcmp@1.0.0
         env:
           GITHUB_TOKEN: ${{ secrets.GHTOKEN }}
-        
-      - name: telegramPush
-        run: |
-          curl https://tgmsgpush.vercel.app/api/notify?u=973896977&m=fuckPictureSizeSuccess -X POST
